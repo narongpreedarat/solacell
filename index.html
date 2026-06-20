@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ทองส่องแสง(มหาเอก) — ผู้เชี่ยวชาญระบบโซล่าเซลล์ครบวงจร</title>
+  <meta name="description" content="ผู้ให้บริการติดตั้งระบบโซล่าเซลล์ครบวงจร ทั้ง On-Grid และ Off-Grid อินเวอร์เตอร์ 3KW-50KW คำนวณค่าใช้จ่ายและประหยัดค่าไฟได้ทันที">
+  <!-- SEO Best Practices implemented -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="nav-logo">
+        <div class="logo-icon"><img src="assets/thongsongsaeng_logo_1781966854449.png" alt="ทองส่องแสง(มหาเอก) Logo" class="brand-logo"></div>
+        <div class="logo-text"><span>ทองส่องแสง</span>(มหาเอก)</div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#services">บริการ</a>
+        <a href="#comparison">ระบบ</a>
+        <a href="#calculator">คำนวณ</a>
+        <a href="#products">อินเวอร์เตอร์</a>
+        <a href="#benefits">ทำไมเลือกเรา</a>
+        <a href="#contact" class="nav-cta btn-glass">ติดต่อเรา</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-grid-pattern"></div>
+      <canvas id="solar-canvas"></canvas>
+      <div class="glow-orb orb-1"></div>
+      <div class="glow-orb orb-2"></div>
+    </div>
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="hero-badge fade-up">
+          <span class="pulse-dot"></span>
+          รับติดตั้งทั่วประเทศไทย
+        </div>
+        <h1 class="hero-title fade-up delay-1">
+          เปลี่ยนแสงอาทิตย์<br>
+          ให้เป็น<span class="gradient-text"> พลังงานที่ยั่งยืน</span>
+        </h1>
+        <p class="hero-desc fade-up delay-2">
+          ผู้เชี่ยวชาญระบบโซล่าเซลล์ครบวงจร ทั้ง On-Grid และ Off-Grid 
+          ออกแบบ ติดตั้ง ดูแลรักษา พร้อมอินเวอร์เตอร์คุณภาพ 3KW–50KW 
+          ประหยัดค่าไฟได้สูงสุด 90%
+        </p>
+        <div class="hero-actions fade-up delay-3">
+          <a href="#calculator" class="btn-primary">⚡ คำนวณค่าใช้จ่าย</a>
+          <a href="#comparison" class="btn-secondary">📖 เรียนรู้เพิ่มเติม</a>
+        </div>
+        <div class="hero-stats fade-up delay-4">
+          <div class="hero-stat">
+            <div class="stat-number" data-target="5000" data-suffix="+">0</div>
+            <div class="stat-label">ลูกค้าทั่วประเทศ</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-number" data-target="15" data-suffix=" ปี">0</div>
+            <div class="stat-label">ประสบการณ์</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-number" data-target="99" data-suffix="%">0</div>
+            <div class="stat-label">ลูกค้าพึงพอใจ</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual fade-up delay-2">
+        <div class="hero-solar-graphic glass-panel">
+          <div class="solar-ring solar-ring-1"><div class="ring-dot"></div></div>
+          <div class="solar-ring solar-ring-2"><div class="ring-dot"></div></div>
+          <div class="solar-ring solar-ring-3"><div class="ring-dot"></div></div>
+          <div class="solar-center-icon">☀️</div>
+          <!-- Floating Cards -->
+          <div class="floating-card fc-savings">
+            <div class="fc-icon">💰</div>
+            <div>
+              <div class="fc-label">ประหยัดค่าไฟ</div>
+              <div class="fc-value">-70%</div>
+            </div>
+          </div>
+          <div class="floating-card fc-power">
+            <div class="fc-icon">⚡</div>
+            <div>
+              <div class="fc-label">ผลิตไฟฟ้า</div>
+              <div class="fc-value">10 kW</div>
+            </div>
+          </div>
+          <div class="floating-card fc-co2">
+            <div class="fc-icon">🌱</div>
+            <div>
+              <div class="fc-label">ลด CO₂</div>
+              <div class="fc-value">4.2 ตัน/ปี</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS BAR ===== -->
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal glass-card">
+          <div class="stat-icon-wrapper">🔆</div>
+          <div class="stat-number" data-target="120" data-suffix=" MW">0</div>
+          <div class="stat-label">กำลังการผลิตที่ติดตั้ง</div>
+        </div>
+        <div class="stat-item reveal glass-card" style="transition-delay: 0.1s;">
+          <div class="stat-icon-wrapper">🏠</div>
+          <div class="stat-number" data-target="5000" data-suffix="+">0</div>
+          <div class="stat-label">โครงการติดตั้งสำเร็จ</div>
+        </div>
+        <div class="stat-item reveal glass-card" style="transition-delay: 0.2s;">
+          <div class="stat-icon-wrapper">🌍</div>
+          <div class="stat-number" data-target="28000" data-suffix="">0</div>
+          <div class="stat-label">ตัน CO₂ ที่ลดได้ต่อปี</div>
+        </div>
+        <div class="stat-item reveal glass-card" style="transition-delay: 0.3s;">
+          <div class="stat-icon-wrapper">⭐</div>
+          <div class="stat-number" data-target="4.9" data-suffix="/5" data-decimal="true">0</div>
+          <div class="stat-label">คะแนนรีวิวเฉลี่ย</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="services section-padding" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">🛠️ บริการของเรา</div>
+        <h2 class="section-title">บริการ<span>โซล่าเซลล์</span>ครบวงจร</h2>
+        <p class="section-subtitle">ตั้งแต่การออกแบบระบบ การติดตั้ง ไปจนถึงการดูแลรักษา เรามีทีมวิศวกรพร้อมให้บริการทุกขั้นตอน</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal glass-card hover-lift">
+          <div class="service-icon">📐</div>
+          <h3>ออกแบบระบบ</h3>
+          <p>วิเคราะห์การใช้ไฟฟ้าและออกแบบระบบให้เหมาะสมกับความต้องการ ทั้ง On-Grid และ Off-Grid พร้อมรายงานผลตอบแทนการลงทุน</p>
+        </div>
+        <div class="service-card reveal glass-card hover-lift" style="transition-delay: 0.1s;">
+          <div class="service-icon">🔧</div>
+          <h3>ติดตั้งมืออาชีพ</h3>
+          <p>ทีมช่างผู้เชี่ยวชาญ มาตรฐาน มอก. รับประกันคุณภาพงานติดตั้ง พร้อมขอใบอนุญาตและเชื่อมต่อระบบไฟฟ้าให้ครบ</p>
+        </div>
+        <div class="service-card reveal glass-card hover-lift" style="transition-delay: 0.2s;">
+          <div class="service-icon">📊</div>
+          <h3>Monitoring & ดูแลรักษา</h3>
+          <p>ระบบ Monitoring เช็คประสิทธิภาพแบบ Real-time บริการตรวจเช็คและทำความสะอาดแผงโซล่าเซลล์ตามกำหนด</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SYSTEM COMPARISON ===== -->
+  <section class="comparison section-padding" id="comparison">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">⚡ เปรียบเทียบระบบ</div>
+        <h2 class="section-title">เลือกระบบที่<span>เหมาะกับคุณ</span></h2>
+        <p class="section-subtitle">ทำความเข้าใจความแตกต่างระหว่างระบบ On-Grid และ Off-Grid เพื่อเลือกระบบที่ตอบโจทย์การใช้งานของคุณ</p>
+      </div>
+      <div class="comparison-grid">
+        <!-- ON-GRID -->
+        <div class="system-card on-grid reveal glass-card hover-glow">
+          <div class="system-badge glow-badge">On-Grid</div>
+          <h3>⚡ ระบบ On-Grid</h3>
+          <p class="system-desc">เชื่อมต่อกับระบบไฟฟ้าของการไฟฟ้า ผลิตไฟใช้เองในเวลากลางวัน และขายไฟส่วนเกินคืนให้การไฟฟ้าได้</p>
+          <ul class="system-features">
+            <li><span class="check">✓</span> ไม่ต้องใช้แบตเตอรี่ ต้นทุนต่ำ</li>
+            <li><span class="check">✓</span> ขายไฟคืนการไฟฟ้าได้ (Net Metering)</li>
+            <li><span class="check">✓</span> ลดค่าไฟได้สูงสุด 70-90%</li>
+            <li><span class="check">✓</span> คืนทุนเร็วภายใน 5-7 ปี</li>
+            <li><span class="check">✓</span> บำรุงรักษาง่าย</li>
+            <li><span class="check">✓</span> เหมาะกับบ้าน/อาคารพาณิชย์</li>
+          </ul>
+          <div class="system-price-tag">
+            <div class="price-label">เริ่มต้นที่</div>
+            <div class="price gradient-text">฿25,000 / kW</div>
+          </div>
+        </div>
+        <!-- OFF-GRID -->
+        <div class="system-card off-grid reveal glass-card hover-glow" style="transition-delay: 0.2s;">
+          <div class="system-badge glow-badge alt">Off-Grid</div>
+          <h3>🔋 ระบบ Off-Grid</h3>
+          <p class="system-desc">ระบบอิสระไม่ต้องพึ่งพาการไฟฟ้า เหมาะสำหรับพื้นที่ห่างไกลหรือต้องการความเป็นอิสระด้านพลังงาน</p>
+          <ul class="system-features">
+            <li><span class="check">✓</span> เป็นอิสระจากการไฟฟ้า 100%</li>
+            <li><span class="check">✓</span> มีไฟฟ้าใช้แม้ไฟฟ้าดับ</li>
+            <li><span class="check">✓</span> เหมาะกับพื้นที่ห่างไกล</li>
+            <li><span class="check">✓</span> ระบบสำรองไฟ 24 ชม.</li>
+            <li><span class="check">✓</span> แบตเตอรี่ LiFePO4 อายุ 10+ ปี</li>
+            <li><span class="check">✓</span> ปลอดภัย ไร้กังวลค่าไฟ</li>
+          </ul>
+          <div class="system-price-tag">
+            <div class="price-label">เริ่มต้นที่</div>
+            <div class="price gradient-text">฿45,000 / kW</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CALCULATOR ===== -->
+  <section class="calculator section-padding" id="calculator">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">🧮 เครื่องมือคำนวณ</div>
+        <h2 class="section-title">คำนวณ<span>ค่าใช้จ่ายและผลประหยัด</span></h2>
+        <p class="section-subtitle">กรอกข้อมูลเพื่อประมาณค่าใช้จ่ายติดตั้ง จำนวนแผงโซล่า และระยะเวลาคืนทุน</p>
+      </div>
+      <div class="calc-container reveal glass-card">
+        <!-- Tabs -->
+        <div class="calc-tabs">
+          <button class="calc-tab active" data-tab="ongrid" id="tab-ongrid">
+            ⚡ ระบบ On-Grid
+          </button>
+          <button class="calc-tab" data-tab="offgrid" id="tab-offgrid">
+            🔋 ระบบ Off-Grid
+          </button>
+        </div>
+        <!-- Body -->
+        <div class="calc-body">
+          <div class="calc-form calc-form-3col" id="calcForm">
+            <!-- Row 1: Panel Selection -->
+            <div class="form-group full-width">
+              <label for="panelType">🔆 เลือกแผงโซล่าเซลล์</label>
+              <div class="custom-select-wrapper">
+                <select id="panelType" class="custom-select">
+                  <option value="ja_550" data-watt="550" data-price="5800">JA Solar 550W Mono PERC — ฿5,800/แผง</option>
+                  <option value="longi_550" data-watt="550" data-price="6200" selected>LONGi 550W Hi-MO 5 — ฿6,200/แผง</option>
+                  <option value="trina_550" data-watt="550" data-price="6000">Trina Solar 550W Vertex S — ฿6,000/แผง</option>
+                  <option value="canadian_545" data-watt="545" data-price="6500">Canadian Solar 545W BiHiKu7 — ฿6,500/แผง</option>
+                  <option value="jinko_580" data-watt="580" data-price="7200">Jinko 580W Tiger Neo N-Type — ฿7,200/แผง</option>
+                </select>
+              </div>
+              <div class="field-hint" id="panelHint">กำลังไฟ: 550W | ราคา: ฿6,200/แผง | ประสิทธิภาพ: 21.3%</div>
+            </div>
+            <!-- Row 2: Inverter -->
+            <div class="form-group">
+              <label for="inverterSize">📏 ขนาดอินเวอร์เตอร์</label>
+              <div class="custom-select-wrapper">
+                <select id="inverterSize" class="custom-select">
+                  <option value="3">3 kW — บ้านขนาดเล็ก</option>
+                  <option value="5" selected>5 kW — บ้านทั่วไป</option>
+                  <option value="8">8 kW — บ้านขนาดใหญ่</option>
+                  <option value="10">10 kW — บ้าน/อาคาร</option>
+                  <option value="15">15 kW — อาคารพาณิชย์</option>
+                  <option value="20">20 kW — โรงงานขนาดเล็ก</option>
+                  <option value="30">30 kW — โรงงาน</option>
+                  <option value="50">50 kW — อุตสาหกรรม</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inverterBrand">🔌 แบรนด์อินเวอร์เตอร์</label>
+              <div class="custom-select-wrapper">
+                <select id="inverterBrand" class="custom-select">
+                  <option value="growatt">Growatt (คุ้มค่า)</option>
+                  <option value="deye" selected>Deye (ยอดนิยม)</option>
+                  <option value="sofar">Sofar Solar</option>
+                  <option value="sungrow">Sungrow</option>
+                  <option value="huawei">Huawei (พรีเมียม)</option>
+                  <option value="sma">SMA (เยอรมนี)</option>
+                </select>
+              </div>
+              <div class="field-hint" id="inverterHint">ราคาประมาณ: ฿32,000 | รับประกัน: 10 ปี</div>
+            </div>
+            <!-- Row 3: Battery (Off-Grid) -->
+            <div class="form-group full-width battery-group" id="batteryGroup" style="display:none;">
+              <label for="batteryType">🔋 เลือกแบตเตอรี่ LiFePO4</label>
+              <div class="custom-select-wrapper">
+                <select id="batteryType" class="custom-select">
+                  <option value="deye_5" data-kwh="5.12" data-price="48000" selected>Deye BOS-G (5.12kWh) — ฿48,000</option>
+                  <option value="huawei_5" data-kwh="5.0" data-price="72000">Huawei LUNA 2000 (5kWh) — ฿72,000</option>
+                </select>
+              </div>
+              <div class="field-hint" id="batteryHint">ความจุ: 5.12 kWh | ราคา: ฿48,000 | อายุการใช้งาน: 6,000+ รอบ</div>
+            </div>
+            <!-- Row 4 -->
+            <div class="form-group">
+              <label for="monthlyBill">💡 ค่าไฟรายเดือน (บาท)</label>
+              <input type="number" id="monthlyBill" class="custom-input" placeholder="เช่น 3000" value="3000" min="500" max="500000">
+            </div>
+            <div class="form-group">
+              <label for="buildingType">🏠 ประเภทอาคาร</label>
+              <div class="custom-select-wrapper">
+                <select id="buildingType" class="custom-select">
+                  <option value="house">บ้านพักอาศัย</option>
+                  <option value="commercial">อาคารพาณิชย์</option>
+                  <option value="factory">โรงงาน/คลังสินค้า</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="region">📍 ภูมิภาค</label>
+              <div class="custom-select-wrapper">
+                <select id="region" class="custom-select">
+                  <option value="central">ภาคกลาง</option>
+                  <option value="north">ภาคเหนือ</option>
+                  <option value="northeast">ภาคตะวันออกเฉียงเหนือ</option>
+                  <option value="south">ภาคใต้</option>
+                  <option value="east">ภาคตะวันออก</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <button class="btn-primary w-full mt-4 btn-glow" id="calcBtn" onclick="calculateSolar()">
+            ⚡ คำนวณผลลัพธ์
+          </button>
+
+          <!-- Results -->
+          <div class="calc-results" id="calcResults">
+            <div class="results-title">📊 ผลการคำนวณ</div>
+            <div class="results-grid">
+              <div class="result-card highlight glass-card">
+                <div class="rc-icon">💰</div>
+                <div class="rc-value gradient-text" id="resultCost">—</div>
+                <div class="rc-label">ค่าติดตั้งรวมทั้งหมด</div>
+              </div>
+              <div class="result-card glass-card">
+                <div class="rc-icon">🔆</div>
+                <div class="rc-value" id="resultPanels">—</div>
+                <div class="rc-label" id="resultPanelsLabel">จำนวนแผงโซล่า</div>
+              </div>
+              <div class="result-card glass-card">
+                <div class="rc-icon">📐</div>
+                <div class="rc-value" id="resultArea">—</div>
+                <div class="rc-label">พื้นที่หลังคาที่ต้องใช้</div>
+              </div>
+              <div class="result-card glass-card">
+                <div class="rc-icon">💡</div>
+                <div class="rc-value" id="resultProduction">—</div>
+                <div class="rc-label">ผลิตไฟฟ้าต่อเดือน</div>
+              </div>
+              <div class="result-card glass-card">
+                <div class="rc-icon">💵</div>
+                <div class="rc-value" id="resultSavings">—</div>
+                <div class="rc-label">ประหยัดค่าไฟต่อเดือน</div>
+              </div>
+              <div class="result-card glass-card" id="batteryCard" style="display:none;">
+                <div class="rc-icon">🔋</div>
+                <div class="rc-value" id="resultBattery">—</div>
+                <div class="rc-label">แบตเตอรี่รวม</div>
+              </div>
+            </div>
+
+            <!-- Cost Breakdown -->
+            <div class="cost-breakdown glass-panel">
+              <div class="breakdown-title">🧾 รายละเอียดค่าใช้จ่าย</div>
+              <div class="breakdown-table">
+                <div class="breakdown-row">
+                  <span class="bd-label">🔆 ค่าแผงโซล่าเซลล์</span>
+                  <span class="bd-value" id="bdPanelCost">—</span>
+                </div>
+                <div class="breakdown-row">
+                  <span class="bd-label">🔌 ค่าอินเวอร์เตอร์</span>
+                  <span class="bd-value" id="bdInverterCost">—</span>
+                </div>
+                <div class="breakdown-row battery-row" id="bdBatteryRow" style="display:none;">
+                  <span class="bd-label">🔋 ค่าแบตเตอรี่</span>
+                  <span class="bd-value" id="bdBatteryCost">—</span>
+                </div>
+                <div class="breakdown-row">
+                  <span class="bd-label">🔧 ค่าอุปกรณ์เสริม + สายไฟ</span>
+                  <span class="bd-value" id="bdAccessoryCost">—</span>
+                </div>
+                <div class="breakdown-row">
+                  <span class="bd-label">👷 ค่าติดตั้ง + ขออนุญาต</span>
+                  <span class="bd-value" id="bdInstallCost">—</span>
+                </div>
+                <div class="breakdown-row total-row">
+                  <span class="bd-label">💰 รวมทั้งหมด</span>
+                  <span class="bd-value gradient-text" id="bdTotalCost">—</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="roi-section">
+              <div class="roi-bar glass-card">
+                <div class="roi-label">📈 ระยะเวลาคืนทุน</div>
+                <div class="roi-value" id="resultROI">—</div>
+              </div>
+              <div class="roi-bar savings-bar glass-card highlight-border">
+                <div class="roi-label">💵 ประหยัดได้ตลอด 25 ปี</div>
+                <div class="roi-value savings-value gradient-text" id="resultLifetimeSavings">—</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCTS / INVERTERS ===== -->
+  <section class="products section-padding" id="products">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">🔌 อินเวอร์เตอร์</div>
+        <h2 class="section-title">เลือกขนาด<span>อินเวอร์เตอร์</span>ที่ใช่</h2>
+        <p class="section-subtitle">อินเวอร์เตอร์คุณภาพสูง มาตรฐานสากล รับประกัน 10 ปี ตั้งแต่ 3KW ถึง 50KW</p>
+      </div>
+      <div class="products-grid">
+        <!-- 3KW -->
+        <div class="product-card reveal glass-card hover-lift">
+          <div class="product-power">3 kW</div>
+          <div class="product-type">บ้านขนาดเล็ก</div>
+          <ul class="product-details">
+            <li><span class="detail-label">แผงโซล่า</span><span class="detail-value">6 แผง</span></li>
+            <li><span class="detail-label">ผลิตไฟ/เดือน</span><span class="detail-value">~405 kWh</span></li>
+            <li><span class="detail-label">พื้นที่หลังคา</span><span class="detail-value">~18 ตร.ม.</span></li>
+            <li><span class="detail-label">รับประกัน</span><span class="detail-value">10 ปี</span></li>
+          </ul>
+          <div class="product-price">On-Grid เริ่มต้น</div>
+          <div class="product-price-value gradient-text">฿89,000</div>
+          <button class="btn-secondary w-full" onclick="selectProduct(3)">เลือกคำนวณ</button>
+        </div>
+        <!-- 5KW -->
+        <div class="product-card popular reveal glass-card hover-lift highlight-border">
+          <div class="popular-badge">ยอดนิยม</div>
+          <div class="product-power">5 kW</div>
+          <div class="product-type">บ้านทั่วไป</div>
+          <ul class="product-details">
+            <li><span class="detail-label">แผงโซล่า</span><span class="detail-value">10 แผง</span></li>
+            <li><span class="detail-label">ผลิตไฟ/เดือน</span><span class="detail-value">~675 kWh</span></li>
+            <li><span class="detail-label">พื้นที่หลังคา</span><span class="detail-value">~30 ตร.ม.</span></li>
+            <li><span class="detail-label">รับประกัน</span><span class="detail-value">10 ปี</span></li>
+          </ul>
+          <div class="product-price">On-Grid เริ่มต้น</div>
+          <div class="product-price-value gradient-text">฿139,000</div>
+          <button class="btn-primary w-full" onclick="selectProduct(5)">เลือกคำนวณ</button>
+        </div>
+        <!-- 10KW -->
+        <div class="product-card reveal glass-card hover-lift">
+          <div class="product-power">10 kW</div>
+          <div class="product-type">บ้าน / อาคาร</div>
+          <ul class="product-details">
+            <li><span class="detail-label">แผงโซล่า</span><span class="detail-value">19 แผง</span></li>
+            <li><span class="detail-label">ผลิตไฟ/เดือน</span><span class="detail-value">~1,350 kWh</span></li>
+            <li><span class="detail-label">พื้นที่หลังคา</span><span class="detail-value">~57 ตร.ม.</span></li>
+            <li><span class="detail-label">รับประกัน</span><span class="detail-value">10 ปี</span></li>
+          </ul>
+          <div class="product-price">On-Grid เริ่มต้น</div>
+          <div class="product-price-value gradient-text">฿259,000</div>
+          <button class="btn-secondary w-full" onclick="selectProduct(10)">เลือกคำนวณ</button>
+        </div>
+        <!-- 20KW -->
+        <div class="product-card reveal glass-card hover-lift">
+          <div class="product-power">20 kW</div>
+          <div class="product-type">โรงงานขนาดเล็ก</div>
+          <ul class="product-details">
+            <li><span class="detail-label">แผงโซล่า</span><span class="detail-value">37 แผง</span></li>
+            <li><span class="detail-label">ผลิตไฟ/เดือน</span><span class="detail-value">~2,700 kWh</span></li>
+            <li><span class="detail-label">พื้นที่หลังคา</span><span class="detail-value">~111 ตร.ม.</span></li>
+            <li><span class="detail-label">รับประกัน</span><span class="detail-value">10 ปี</span></li>
+          </ul>
+          <div class="product-price">On-Grid เริ่มต้น</div>
+          <div class="product-price-value gradient-text">฿479,000</div>
+          <button class="btn-secondary w-full" onclick="selectProduct(20)">เลือกคำนวณ</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BENEFITS ===== -->
+  <section class="benefits section-padding" id="benefits">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">✨ ข้อดีของเรา</div>
+        <h2 class="section-title">ทำไมต้องเลือก<span> ทองส่องแสง</span>(มหาเอก)</h2>
+        <p class="section-subtitle">เรามุ่งมั่นมอบบริการที่ดีที่สุดให้กับลูกค้าทุกท่าน ด้วยมาตรฐานระดับสากล</p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card reveal glass-card hover-lift">
+          <div class="benefit-icon">🏆</div>
+          <div class="benefit-content">
+            <h4>ประสบการณ์ 15+ ปี</h4>
+            <p>ทีมวิศวกรและช่างผู้เชี่ยวชาญกว่า 15 ปี ดูแลโครงการมากกว่า 5,000 โครงการทั่วประเทศ</p>
+          </div>
+        </div>
+        <div class="benefit-card reveal glass-card hover-lift" style="transition-delay: 0.1s;">
+          <div class="benefit-icon">🛡️</div>
+          <div class="benefit-content">
+            <h4>รับประกัน 25 ปี</h4>
+            <p>แผงโซล่าเซลล์รับประกันผลผลิตไฟฟ้า 25 ปี อินเวอร์เตอร์รับประกัน 10 ปี งานติดตั้ง 5 ปี</p>
+          </div>
+        </div>
+        <div class="benefit-card reveal glass-card hover-lift" style="transition-delay: 0.2s;">
+          <div class="benefit-icon">💳</div>
+          <div class="benefit-content">
+            <h4>ผ่อน 0% นาน 12 เดือน</h4>
+            <p>ผ่อนชำระสบาย 0% นานสูงสุด 12 เดือน ร่วมกับบัตรเครดิตชั้นนำ ไม่ต้องจ่ายดอกเบี้ย</p>
+          </div>
+        </div>
+        <div class="benefit-card reveal glass-card hover-lift" style="transition-delay: 0.3s;">
+          <div class="benefit-icon">📱</div>
+          <div class="benefit-content">
+            <h4>Monitoring Real-time</h4>
+            <p>ดูการผลิตไฟฟ้าแบบ Real-time ผ่านแอพมือถือ พร้อมแจ้งเตือนอัตโนมัติหากระบบมีปัญหา</p>
+          </div>
+        </div>
+        <div class="benefit-card reveal glass-card hover-lift" style="transition-delay: 0.4s;">
+          <div class="benefit-icon">🔋</div>
+          <div class="benefit-content">
+            <h4>อุปกรณ์คุณภาพสูง</h4>
+            <p>ใช้แผงโซล่า Tier-1 และอินเวอร์เตอร์แบรนด์ชั้นนำ เช่น Huawei, Growatt, Deye มาตรฐาน IEC</p>
+          </div>
+        </div>
+        <div class="benefit-card reveal glass-card hover-lift" style="transition-delay: 0.5s;">
+          <div class="benefit-icon">🚚</div>
+          <div class="benefit-content">
+            <h4>บริการหลังการขาย</h4>
+            <p>ทีมช่างพร้อมให้บริการตรวจเช็คและซ่อมบำรุงตลอดอายุการใช้งาน Call Center 7 วัน</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROCESS ===== -->
+  <section class="process section-padding">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">📋 ขั้นตอนการทำงาน</div>
+        <h2 class="section-title">ขั้นตอน<span>การติดตั้ง</span></h2>
+        <p class="section-subtitle">ง่าย สะดวก รวดเร็ว เพียง 4 ขั้นตอน ก็ได้ใช้พลังงานสะอาด</p>
+      </div>
+      <div class="process-steps">
+        <div class="process-step reveal glass-card">
+          <div class="step-img-wrapper"><img src="assets/step_1_survey_1781966866745.png" alt="สำรวจหน้างาน" class="step-img"></div>
+          <div class="step-number gradient-text">01</div>
+          <h4>สำรวจหน้างาน</h4>
+          <p>ทีมวิศวกรลงพื้นที่สำรวจหลังคา ตรวจสอบระบบไฟฟ้า และวิเคราะห์ความเหมาะสม</p>
+        </div>
+        <div class="process-step reveal glass-card" style="transition-delay: 0.1s;">
+          <div class="step-img-wrapper"><img src="assets/step_2_design_1781966885924.png" alt="ออกแบบระบบ" class="step-img"></div>
+          <div class="step-number gradient-text">02</div>
+          <h4>ออกแบบระบบ</h4>
+          <p>ออกแบบระบบให้เหมาะกับการใช้งาน พร้อมเสนอราคาและผลตอบแทนที่คาดหวัง</p>
+        </div>
+        <div class="process-step reveal glass-card" style="transition-delay: 0.2s;">
+          <div class="step-img-wrapper"><img src="assets/step_3_install_1781966898096.png" alt="ติดตั้งระบบ" class="step-img"></div>
+          <div class="step-number gradient-text">03</div>
+          <h4>ติดตั้งระบบ</h4>
+          <p>ทีมช่างเข้าติดตั้ง ดำเนินการเชื่อมต่อระบบ และขอใบอนุญาตจากการไฟฟ้า</p>
+        </div>
+        <div class="process-step reveal glass-card" style="transition-delay: 0.3s;">
+          <div class="step-img-wrapper"><img src="assets/step_4_handover_1781966916224.png" alt="ส่งมอบ & ดูแล" class="step-img"></div>
+          <div class="step-number gradient-text">04</div>
+          <h4>ส่งมอบ & ดูแล</h4>
+          <p>ทดสอบระบบ ส่งมอบพร้อมรับประกัน และให้บริการดูแลรักษาตลอดอายุใช้งาน</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta section-padding" id="contact">
+    <div class="container">
+      <div class="cta-card reveal glass-panel">
+        <div class="cta-glow"></div>
+        <h2>พร้อมเริ่มต้น<span class="gradient-text"> ประหยัดค่าไฟ</span> แล้วหรือยัง?</h2>
+        <p>ติดต่อเราวันนี้เพื่อรับคำปรึกษาฟรี พร้อมประเมินราคาและออกแบบระบบให้ตรงกับความต้องการของคุณ</p>
+        <div class="cta-actions">
+          <a href="https://line.me/ti/p/~minibot" class="btn-primary btn-glow" target="_blank">💬 แชทผ่าน LINE (ID: minibot)</a>
+        </div>
+        <div class="cta-info">
+          <div class="cta-info-item">
+            <span class="cta-icon">📍</span>
+            กรุงเทพฯ และทั่วประเทศ
+          </div>
+          <div class="cta-info-item">
+            <span class="cta-icon">🕐</span>
+            จันทร์-เสาร์ 08:00-18:00
+          </div>
+          <div class="cta-info-item">
+            <span class="cta-icon">📧</span>
+            info@thongsongsaeng.co.th
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">
+            <div class="logo-icon"><img src="assets/thongsongsaeng_logo_1781966854449.png" alt="ทองส่องแสง(มหาเอก) Logo" class="brand-logo"></div>
+            <span>ทองส่องแสง</span>(มหาเอก)
+          </div>
+          <p>ผู้เชี่ยวชาญระบบโซล่าเซลล์ครบวงจร มากกว่า 15 ปีในอุตสาหกรรมพลังงานแสงอาทิตย์ เรามุ่งมั่นสร้างอนาคตที่ยั่งยืน</p>
+          <div class="footer-social">
+            <a href="#" class="glass-icon" aria-label="Facebook">📘</a>
+            <a href="#" class="glass-icon" aria-label="Line">💬</a>
+            <a href="#" class="glass-icon" aria-label="YouTube">📺</a>
+            <a href="#" class="glass-icon" aria-label="Instagram">📸</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>บริการ</h4>
+          <ul>
+            <li><a href="#services">ออกแบบระบบ</a></li>
+            <li><a href="#services">ติดตั้งโซล่าเซลล์</a></li>
+            <li><a href="#services">บำรุงรักษา</a></li>
+            <li><a href="#calculator">คำนวณค่าใช้จ่าย</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>ผลิตภัณฑ์</h4>
+          <ul>
+            <li><a href="#comparison">ระบบ On-Grid</a></li>
+            <li><a href="#comparison">ระบบ Off-Grid</a></li>
+            <li><a href="#products">อินเวอร์เตอร์</a></li>
+            <li><a href="#products">แผงโซล่าเซลล์</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>ติดต่อ</h4>
+          <ul>
+            <li><a href="mailto:info@thongsongsaeng.co.th">📧 info@thongsongsaeng.co.th</a></li>
+            <li><a href="#">📍 กรุงเทพมหานคร</a></li>
+            <li><a href="https://line.me/ti/p/~minibot" target="_blank">💬 LINE ID: minibot</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 <span>ทองส่องแสง(มหาเอก)</span>. All rights reserved.</p>
+        <p>Powered by ✨ Clean Energy</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
